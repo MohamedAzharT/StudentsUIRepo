@@ -1,11 +1,37 @@
 .login-container {
-    background-image: url('https://www.sagatraining.ca/wp-content/uploads/2018/10/background-images-for-login-form-8.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Moves the image behind other content */
+}
+::ng-deep p-card .p-card {
+  background: transparent !important;
+  /* box-shadow: none !important; */
+}
+p-card {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  width: 400px;
+  text-align: center;
+  background: rgba(239, 238, 238, 0.2) !important; /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+/* Add spacing between label and input fields */
+p-card table td {
+  padding-bottom: 10px; /* Add space between rows */
+}
+
+label {
+  margin-bottom: 5px; /* Add space between label and input */
+}
+
+input {
+  width: 100%;  /* Ensure the input takes full width of the cell */
+  padding: 8px;
+  margin-top: 5px; /* Space between input and surrounding elements */
+}

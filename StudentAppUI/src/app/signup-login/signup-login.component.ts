@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './signup-login.component.css'
 })
 export class SignupLoginComponent {
+  isLogin: boolean = true; // Set the default form to be the Login form
 
+  toggleForm() {
+    this.isLogin = !this.isLogin; // Toggle between login and signup
+  }
 }
