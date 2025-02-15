@@ -1,37 +1,95 @@
+/* Background Image */
 .login-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* Moves the image behind other content */
+  object-fit: cover;
+  z-index: -2;
 }
-::ng-deep p-card .p-card {
-  background: transparent !important;
-  /* box-shadow: none !important; */
+
+/* Semi-transparent Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
-p-card {
-  position: absolute;
-  left: 5%;
-  top: 10%;
+
+/* Form Wrapper */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card Design */
+.registration-card {
   width: 400px;
-  text-align: center;
-  background: rgba(239, 238, 238, 0.2) !important; /* Semi-transparent */
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05) !important;
   border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Add spacing between label and input fields */
-p-card table td {
-  padding-bottom: 10px; /* Add space between rows */
+.registration-card ::ng-deep .p-card-title {
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
 }
 
-label {
-  margin-bottom: 5px; /* Add space between label and input */
+/* Form Group Design */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-input {
-  width: 100%;  /* Ensure the input takes full width of the cell */
-  padding: 8px;
-  margin-top: 5px; /* Space between input and surrounding elements */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: whitesmoke;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+/* Password Field */
+.form-group ::ng-deep .p-password input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  color: whitesmoke;
+}
+.form-group ::ng-deep .p-password {
+  width: 100% !important;
+}
+/* Button Design */
+.register-btn {
+  width: 100%;
+  background: linear-gradient(to right, #4CAF50, #66BB6A);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background: linear-gradient(to right, #43A047, #4CAF50);
 }
